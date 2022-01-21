@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { AutoIncrement, Column, DataType, Model, Table } from "sequelize-typescript";
+import { DateDataType } from "sequelize/types";
 
 interface TimerCreationAttributes {    
     user_id: number;
@@ -19,7 +20,7 @@ export class Timer extends Model<Timer, TimerCreationAttributes> {
     user_id: number;
 
     @ApiProperty({example: '2013-10-21T13:28:06.419Z', description: "DateTime string"})
-    @Column({type: DataType.STRING, unique: false, allowNull: false})
+    @Column({type: DataType.DATE, unique: false, allowNull: false})
     time: string;
 
     @ApiProperty({example: true, description: "Use true if timer start, false if timer stop"})
