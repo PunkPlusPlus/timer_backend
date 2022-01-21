@@ -11,7 +11,7 @@ export class TimerController {
 
     constructor(private timerService: TimerService) {}
 
-    @ApiOperation({summary: "Create user"}) 
+    @ApiOperation({summary: "Create new timer record"}) 
     @ApiResponse({status: 200, type: Timer})
     @Post()
     create(@Body() timerDto: TimerRecordDto) {
